@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Regal Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Regal Calendar" />
+    <meta name="author" content="Florentino Mejía" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="css/RegalCalendar.css" rel="stylesheet" />
+    <link href="css/code.css" rel="stylesheet" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/RegalCalendar.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $('#rCalendar').RegalCalendar({
+            modal: true,
+            theme: '#007bff'
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">RegalCalendar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="start.php">Quick start</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="modal.php">Modal calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="preview.php">Preview text</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>Modal</h1>
+                    <p>To show your calendar add a <code>&lt;div&gt;</code> tag with a <code>&lt;span&gt;</code> for
+                        each event you want to show.</p>
+                    <p>Especify the information of your event with: <code>data-title</code> title of the event,
+                        <code>data-location</code> location of the event,
+                        <code>data-date</code> date of the event, <code>data-time</code> time of the event,
+                        <code>data-icon</code> icon of the event (use <a
+                            href="https://fontawesome.com/icons?d=gallery&m=free" target="_blank">fontawsome icons</a>)
+                        <code>data-types</code> type of location <span class="badge badge-primary">address</span> <span
+                            class="badge badge-primary">country</span> <span class="badge badge-primary">postcode</span>
+                        <span class="badge badge-primary">place</span>
+                        <span class="badge badge-primary">region</span> <span
+                            class="badge badge-primary">district</span>
+                    </p>
+                    <hr />
+                </div>
+
+                <p><span class="label label-info">Add events:</span></p>
+                <pre class="prettyprint linenums"><code>&lt;div id="rCalendar" class="regalcalendar"&gt;
+    &lt;span 
+        class="event" 
+        data-title="Event 1" 
+        data-location="France" 
+        data-date="11/01/2020" 
+        data-time="12:00" 
+        data-icon="fa fa-puzzle-piece" 
+        data-types="country"&gt;
+        &lt;!-- Event description --&gt;
+    &lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+                <p><span class="label label-info">Set Regal Calendar, set modal option to true
+                        <code>(modal: true)</code>: </span></p>
+                <pre class="prettyprint linenums"><code>&lt;script&gt;
+    $(function() {
+        $('#rCalendar').RegalCalendar({
+            modal: true,
+            theme: '#11a19f'
+        });
+    });
+&lt;/script&gt;
+</code>
+</pre>
+                <div id="rCalendar" class="regalcalendar">
+                    <span class="event" data-title="Event 1" data-location="Buenos Aires St, Guadalupe,Durango,Mexico"
+                        data-date="24/12/2019" data-time="16:00" data-icon="fas fa-holly-berry" data-types="address"
+                        data-preview="Christmas Eve">Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation
+                        ullamco laboris nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                    <span class="event" data-title="Event 2" data-location="France" data-date="13/12/2019"
+                        data-time="12:00" data-icon="fas fa-baseball-ball" data-types="country"
+                        data-preview="baseball-game">Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation ullamco laboris
+                        nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                    <span class="event" data-title="Event 3" data-location="Buenos Aires St, Guadalupe, Durango,Mexico"
+                        data-date="11/01/2020" data-time="16:00" data-icon="fa fa-baby" data-types="address"
+                        data-preview="Baby shower">Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation
+                        ullamco laboris nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                    <span class="event" data-title="Event 4" data-location="France" data-date="29/01/2020"
+                        data-time="12:00" data-icon="fas fa-user-md" data-types="country"
+                        data-preview="medical appointment">Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation ullamco laboris
+                        nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                    <span class="event" data-title="Event 5" data-location="Buenos Aires St, Guadalupe,Durango,Mexico"
+                        data-date="04/02/2020" data-time="16:00" data-icon="fas fa-school" data-types="address"
+                        data-preview="Start classes">Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation
+                        ullamco laboris nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                    <span class="event" data-title="Event 6" data-location="France" data-date="18/02/2020"
+                        data-time="12:00" data-icon="fas fa-birthday-cake" data-types="country"
+                        data-preview="Birthday">Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui Lorem ipsum dolor sit amet, nostrud exercitation ullamco laboris
+                        nisi ut aliqu se cillum dolore eu fugiat nulla pariatur</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</body>
+
+</html>

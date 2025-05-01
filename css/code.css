@@ -1,0 +1,66 @@
+body {
+    background: white
+}
+
+div.row {
+    margin-top: 1rem;
+}
+
+h4.tile,
+h5.tile {
+    margin: 6rem 0;
+    text-align: center;
+}
+
+xmp {
+    margin: 0;
+}
+
+pre li {
+    color: #9f9f9f;
+    list-style-type: inherit !important;
+    background: transparent !important;
+    padding-left: 4px;
+}
+
+pre code {
+    font-size: 14px;
+}
+
+pre.prettyprint {
+    background: #f8f9fa;
+    border: 0 !important;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+span.atv,
+span.typ {
+    color: #e83e8c;
+}
+
+span.tag {
+    color: #2f6f9f;
+}
+
+span.atn {
+    color: #4f9fcf;
+}
+
+span.pun,
+span.pln {
+    color: #212529;
+}
+
+span.str,
+span.lit {
+    color: #c30;
+}
+
+span.kwd {
+    color: #069;
+}
+
+span.com {
+    color: #9f9f9f;
+}
