@@ -193,9 +193,11 @@ function setMap(el, mapToken, markerIcon, mapZoom, location, types) {
     var $map = $(el.currentTarget).find(".map_mylocation");
     console.log($map);
 
-    var $iframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.249180589408!2d-104.55607675015926!3d24.022276620263657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb0afe49269e1%3A0x43644f8b73e439ad!2sUniversidad%20Polit%C3%A9cnica%20de%20Durango!5e0!3m2!1ses!2smx!4v1746048065221!5m2!1ses!2smx" width="172" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
-
     if (location.length > 0) {
+        const url = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+        const $iframe = `<iframe src="${url}" width="172" height="220" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+        // $map.innerHTML = $iframe;
+
         $map.append($iframe);
     }
 
